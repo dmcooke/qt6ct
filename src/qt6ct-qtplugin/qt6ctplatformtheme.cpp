@@ -114,7 +114,6 @@ QPlatformDialogHelper *Qt6CTPlatformTheme::createPlatformDialogHelper(DialogType
 
 const QPalette *Qt6CTPlatformTheme::palette(QPlatformTheme::Palette type) const
 {
-    qDebug() << Q_FUNC_INFO << type;
     return m_palette ? &*m_palette : QGenericUnixTheme::palette(type);
 }
 
@@ -141,7 +140,6 @@ QVariant Qt6CTPlatformTheme::themeHint(QPlatformTheme::ThemeHint hint) const
     case QPlatformTheme::SystemIconThemeName:
         return m_iconTheme;
     case QPlatformTheme::StyleNames:
-        qDebug() << Q_FUNC_INFO;
         return QStringList() << "qt6ct-style";
     case QPlatformTheme::IconThemeSearchPaths:
         return Qt6CT::iconPaths();
